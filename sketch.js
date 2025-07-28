@@ -69,3 +69,19 @@ function draw(){
      slingshot1.display();
     platform.display();
 }
+
+
+function mouseDragged(){
+  Matter.Body.setPosition(polygon1.body, {x: mouseX , y: mouseY});
+}
+
+function keyPressed() {
+  if(keyCode === 32){
+    Matter.Body.setPosition(polygon1.body, {x: 75 , y: 200});
+    slingshot1.attatch(polygon1.body);
+  }
+}
+
+function mouseReleased(){
+  slingshot1.fly();
+}
