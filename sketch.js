@@ -4,7 +4,8 @@ const Bodies = Matter.Bodies;
 
 var engine, world;
 var box1, pig1;
-var backgroundImg,platform;
+var backgroundImg,platform, slingshot1;
+var bird;
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
@@ -37,6 +38,8 @@ function setup(){
 
     bird = new Bird(100,100);
 
+    slingshot1 = new SlingShot(bird.body,{x:100, y:150});
+
 }
 
 function draw(){
@@ -60,6 +63,9 @@ function draw(){
     log4.display();
     log5.display();
 
+    
+
     bird.display();
+     slingshot1.display();
     platform.display();
 }
